@@ -27,22 +27,26 @@ const server = http.createServer((req, res) => {
         // File Write Operation
         fs.writeFile('demo.txt', 'hello world', (err) => {
             if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.writeHead(200, { 'Content-Type': 'text/plain' });
                 res.end('Error writing file');
-            } else {
+            }
+            else {
                 res.writeHead(200, { 'Content-Type': 'text/plain' });
                 res.end('File written successfully');
             }
         });
 
-    } else {
+    }
+    else {
         // 404 Not Found
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Page not found');
     }
+
+
 });
 
 // Start the server and listen on port 5500
 server.listen(5500, () => {
-    console.log('Server is listening on port 5500');
+    console.log('it is listening on port 5500');
 });
